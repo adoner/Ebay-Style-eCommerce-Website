@@ -1,0 +1,48 @@
+#Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^desktop$ pages/main.php
+RewriteRule ^iletisim$ pages/iletisim.php
+RewriteRule ^uyegiris$ pages/uye-giris.php
+RewriteRule ^tebrikler$ pages/uye-tamam.php
+RewriteRule ^yeniuyelik$ pages/uye-ol.php
+RewriteRule ^arama$ pages/arama_sonuc.php
+RewriteRule ^404$ pages/404.php
+RewriteRule ^kamuspotu$ pages/video_goster.php
+RewriteRule ^sifremiunuttum$ pages/sifremiunuttum.php
+RewriteRule ^sifreyenile/([0-9]+)/([A-Za-z0-9-]+)/?$ pages/sifreyenile.php?id=$1&activationcode=$2 [L]
+RewriteRule ^yardim$ pages/yardim.php
+RewriteRule ^ilanmesaj/([0-9]+)/([0-9]+)/?$ pages/ilanmesaj.php?memberid=$1&ilanid=$2 [L]
+RewriteRule ^member$ memberpanel/pages/main-page.php
+RewriteRule ^user$ userpanel/pages/main.php
+RewriteRule ^kategori/([A-Za-z0-9-]+)/([0-9]+)/?$ pages/kategori.php?kat=$1&p=$2 [L]
+RewriteRule ^ilandetay/([A-Za-z0-9-]+)/?$ pages/ilan-detay.php?id=$1 [L]
+RewriteRule ^altkategori/([A-Za-z0-9-]+)/([0-9]+)/?$ pages/kategori.php?altkat=$1&p=$2 [L]
+RewriteRule ^altaltkategori/([A-Za-z0-9-]+)/([0-9]+)/?$ pages/kategori.php?altaltkat=$1&p=$2 [L]
+RewriteRule ^uye/([0-9]+)/?$ pages/tumilanlar.php?uyeid=$1 [L]
+RewriteRule ^sepetim$ pages/sepetim.php
+RewriteRule ^sepetim/([A-Za-z0-9-]+)/?$ pages/sepetim.php?islem=$1 [L]
+RewriteRule ^proceed$ pages/proceed.php
+RewriteRule ^satinal$ inc/islemler.php?islem=userLoginCheck
+RewriteRule ^chartLogin$ pages/satinalgiris.php
+RewriteRule ^galeriler$ pages/fotogalerikategori.php
+RewriteRule ^galeriler/([0-9]+)/?$ pages/fotogaleri.php?kat=$1 [L]
+RewriteRule ^stamam/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ pages/siparis_tamamla.php?member=$1&step=$2 [L]
+RewriteRule ^odemeTercih/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ pages/siparis_tamamla.php?member=$1&step=$2&islem=$3 [L]
+RewriteRule ^siparisKaydet/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ inc/islemler.php?member=$1&step=$2&islem=$3 [L]
+RewriteRule ^execute/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ inc/islemler.php?member=$1&step=$2&islem=$3 [L]
+RewriteRule ^exec/([A-Za-z0-9-]+)?$ inc/islemler.php?islem=$1 [L]
+RewriteRule ^login/([A-Za-z0-9-]+)?$ inc/islemler.php?islem=$1 [L]
+RewriteRule ^category/([A-Za-z0-9-]+)?$ pages/kategori.php?category=$1 [L]
+RewriteRule ^logout$ inc/logout.php
+RewriteRule ^userlogout$ userpanel/pages/logout.php
+RewriteRule ^urundetay/([0-9]+)/?$ pages/urun_detay.php?prodid=$1 [L]
+RewriteRule ^admin$ adminpanel/redirect.php
+RewriteRule ^maintain$ pages/maintainance.php
+RewriteRule ^([A-Za-z0-9-]+)/?$ pages/sayfa.php?p=$1 [L]
+
